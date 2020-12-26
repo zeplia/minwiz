@@ -28,8 +28,10 @@ body {
 a {
   text-decoration: none;
   color: var(--highlight);
+  margin: 0.1em 0;
+  display: inline-block;
 }
 
 a:hover {
-  border-bottom: 1px solid;
+  text-decoration: underline;
 }
