@@ -1,0 +1,22 @@
+{
+  "name": "minwiz",
+  "version": "1.0.0",
+  "description": "MinWiz - Minimal starter kit for under 1 KB sites",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeplia/minwiz.git"
+  },
+  "author": "Zeplia",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/zeplia/minwiz/issues"
+  },
+  "homepage": "https://github.com/zeplia/minwiz#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1"
+  }
+}
