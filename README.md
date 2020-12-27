@@ -27,4 +27,5 @@ Please note that I'm using package-lock with lockfileVersion 2. If you submit a 
 
 ## Thank you
 
-Design insipired by [john-doe.neocities.org](https://john-doe.neocities.org/).
+- Design insipired by [john-doe.neocities.org](https://john-doe.neocities.org/).
+- [Netlify](https://www.netlify.com/) for theirs excellent hosting service.
