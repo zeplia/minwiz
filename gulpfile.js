@@ -27,7 +27,7 @@ const css = () => {
 };
 
 const purgeCss = () => {
-  return del(["dist/styles/**"]);
+  return del(["dist/styles"]);
 };
 
 const favIcon = () => {
