@@ -1,17 +1,15 @@
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  --textcolor: #121212;
-  --bgcolor: #fff;
-  --highlight: #2749c9;
+  --tc: #121212;
+  --bc: #fff;
+  --hc: #2749c9;
 }
 
 @media (prefers-color-scheme: dark) {
   * {
-    --textcolor: #dadada;
-    --bgcolor: #141414;
-    --highlight: #ffc400;
+    --tc: #dadada;
+    --bc: #141414;
+    --hc: #ffc400;
   }
 }
 
@@ -19,15 +17,15 @@ body {
   font-size: 18px;
   font-family: system-ui, sans-serif;
   line-height: 1.4;
-  color: var(--textcolor);
-  background: var(--bgcolor);
+  color: var(--tc);
+  background: var(--bc);
   max-width: 64em;
   margin: 0 auto;
 }
 
 a {
   text-decoration: none;
-  color: var(--highlight);
+  color: var(--hc);
   margin: 0.1em 0;
   display: inline-block;
 }
