@@ -4,6 +4,7 @@ const cleanCSS = require("gulp-clean-css");
 const inlinesource = require("gulp-inline-source");
 const path = require("path");
 const del = require("del");
+const rename = require("gulp-rename");
 
 const html = () => {
   return gulp
@@ -29,11 +30,18 @@ const purgeCss = () => {
   return del(["dist/styles/**"]);
 };
 
+const favIcon = () => {
+  return gulp
+    .src("design/tinypng.png")
+    .pipe(rename("favicon.ico"))
+    .pipe(gulp.dest("dist"));
+};
+
 const dev = () => {
-  return gulp.watch(["src/**/*"], gulp.series(css, html, purgeCss));
+  return gulp.watch(["src/**/*"], gulp.series(css, html, purgeCss, favIcon));
 };
 
 exports.html = html;
 exports.css = css;
 exports.dev = dev;
-exports.default = gulp.series(css, html, purgeCss);
+exports.default = gulp.series(css, html, purgeCss, favIcon);
