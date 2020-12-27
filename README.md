@@ -1,6 +1,6 @@
-# MinWiz - Minimal starter kit for under 1 KB sites
+# MinWiz - Minimal starter kit for under 2 KB sites
 
-Use this template to create a **viable, good looking, production-ready website** whose home page does not exceed 1 KB compressed size when opened in a browser. Ideally, the total size of all assets (HTML, CSS, favicon, etc.) downloaded by the browser when opening the page will be under 1KB. You can see a live version at [MinWiz.com](https://minwiz.com)
+Use this template to create a **viable, good looking, production-ready website** whose home page does not exceed 2 KB compressed size when opened in a browser. Ideally, the total size of all assets (HTML, CSS, favicon, etc.) downloaded by the browser when opening the page will be under 2 KB. You can see a live version at [MinWiz.com](https://minwiz.com)
 
 ## Getting started
 

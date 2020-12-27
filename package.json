@@ -1,7 +1,7 @@
 {
   "name": "minwiz",
   "version": "1.0.0",
-  "description": "MinWiz - Minimal starter kit for under 1 KB sites",
+  "description": "MinWiz - Minimal starter kit for under 2 KB sites",
   "scripts": {
     "build": "gulp"
   },
