@@ -15,21 +15,38 @@
 
 body {
   font-size: 18px;
-  font-family: system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.4;
   color: var(--tc);
   background: var(--bc);
-  max-width: 64em;
+  max-width: 42em;
   margin: 0 auto;
+  padding: 1em;
 }
 
 a {
   text-decoration: none;
   color: var(--hc);
-  margin: 0.1em 0;
   display: inline-block;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 1em;
+}
+/* end header */
+
+h2,
+section {
+  margin-bottom: 1em;
 }
