@@ -58,7 +58,7 @@ p {
 }
 
 ul {
-  padding-inline-start: 1em;
+  padding-inline-start: 1.1em;
 }
 
 /* section */
@@ -83,5 +83,11 @@ section#home {
 
 h2 {
   margin-top: 3em;
+}
+
+@media (hover: none), (hover: on-demand) {
+  section {
+    min-height: 65em;
+  }
 }
 /* end section */
