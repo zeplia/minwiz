@@ -16,8 +16,10 @@
   },
   "homepage": "https://github.com/zeplia/minwiz#readme",
   "devDependencies": {
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
-    "gulp-htmlmin": "^5.0.1"
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-inline-source": "^4.0.0"
   }
 }

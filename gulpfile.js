@@ -1,18 +1,20 @@
-var gulp = require("gulp");
+const gulp = require("gulp");
 const htmlmin = require("gulp-htmlmin");
 const cleanCSS = require("gulp-clean-css");
+const inlinesource = require("gulp-inline-source");
+const path = require("path");
+const del = require("del");
 
-function html(cb) {
-  gulp
+const html = () => {
+  return gulp
     .src("src/*.html")
+    .pipe(inlinesource({ rootpath: path.resolve("dist") }))
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("dist"));
+};
 
-  cb();
-}
-
-function css(cb) {
-  gulp
+const css = () => {
+  return gulp
     .src("src/styles/*.css")
     .pipe(
       cleanCSS({ debug: true }, (details) => {
@@ -20,10 +22,18 @@ function css(cb) {
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
       })
     )
-    .pipe(gulp.dest("dist"));
-  cb();
-}
+    .pipe(gulp.dest("dist/styles"));
+};
 
-const defaultTasks = gulp.parallel(html, css);
+const purgeCss = () => {
+  return del(["dist/styles/**"]);
+};
 
-exports.default = defaultTasks;
+const dev = () => {
+  return gulp.watch(["src/**/*"], gulp.series(css, html, purgeCss));
+};
+
+exports.html = html;
+exports.css = css;
+exports.dev = dev;
+exports.default = gulp.series(css, html, purgeCss);
