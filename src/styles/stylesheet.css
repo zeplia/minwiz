@@ -1,15 +1,15 @@
 * {
   margin: 0;
-  --tc: #121212;
+  --tc: #111;
   --bc: #fff;
-  --hc: #2749c9;
+  --hc: #06c;
 }
 
 @media (prefers-color-scheme: dark) {
   * {
-    --tc: #dadada;
-    --bc: #141414;
-    --hc: #ffc400;
+    --tc: #fff;
+    --bc: #111;
+    --hc: #fb0;
   }
 }
 
