@@ -2,7 +2,7 @@
   margin: 0;
   --tc: #111;
   --bc: #fff;
-  --hc: #06c;
+  --hc: #384;
 }
 
 @media (prefers-color-scheme: dark) {
