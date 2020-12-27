@@ -13,7 +13,7 @@ If you're doing web development you probably already have gulp-cli globally inst
 - build the site (in the _dist_ folder) with `npm run build`
 - at this point, the _dist_ folder contains all assets in a minified form, ready to be copied/deployed to your web hosting service
 
-If you want to live edit the site, there is a handy-dandy `gulp dev` command and the Live Code extension for VS Code is configured to open the site from _dist_ folder. Just run the command and click _Go Live_ in the status panel of VS Code.
+If you want to live edit the site, there is a handy-dandy `gulp dev` command and the Live Server extension for VS Code is configured to open the site from _dist_ folder. Run the command, click _Go Live_ in the status panel of VS Code and you're good to go.
 
 ## Contributing
 
