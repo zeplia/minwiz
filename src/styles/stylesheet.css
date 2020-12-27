@@ -21,7 +21,12 @@ body {
   background: var(--bc);
   max-width: 42em;
   margin: 0 auto;
-  padding: 1em;
+  position: relative;
+}
+
+header,
+main {
+  margin: 0 1em;
 }
 
 a {
@@ -48,11 +53,35 @@ nav a {
 
 ul,
 h2,
-p,
-section {
+p {
   margin-bottom: 1em;
 }
 
 ul {
   padding-inline-start: 1em;
 }
+
+/* section */
+section {
+  display: none;
+  position: absolute;
+  background: var(--bc);
+  margin-right: 2em;
+  min-inline-size: -webkit-fill-available;
+  top: 0;
+  z-index: -1;
+  min-height: 100vh;
+}
+
+section:target {
+  display: block;
+}
+
+section#home {
+  display: block;
+}
+
+h2 {
+  margin-top: 3em;
+}
+/* end section */
