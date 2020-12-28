@@ -58,7 +58,7 @@ p {
 }
 
 ul {
-  padding-inline-start: 1.1em;
+  padding-left: 1.1em;
 }
 
 /* section */
@@ -67,7 +67,10 @@ section {
   position: absolute;
   background: var(--bc);
   margin-right: 2em;
-  min-inline-size: -webkit-fill-available;
+  height: 100%;
+  height: -moz-available; /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
   top: 0;
   z-index: -1;
   min-height: 100vh;
@@ -85,9 +88,9 @@ h2 {
   margin-top: 3em;
 }
 
-@media (hover: none), (hover: on-demand) {
+@media (hover: none), (pointer: coarse) {
   section {
-    min-height: 65em;
+    min-height: 54em;
   }
 }
 /* end section */
