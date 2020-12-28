@@ -66,14 +66,11 @@ section {
   display: none;
   position: absolute;
   background: var(--bc);
-  margin-right: 2em;
-  height: 100%;
-  height: -moz-available; /* WebKit-based browsers will ignore this. */
-  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-  height: fill-available;
+  margin-right: 1em;
+  /*min-inline-size: -webkit-fill-available;*/
   top: 0;
   z-index: -1;
-  min-height: 100vh;
+  min-height: 42em;
 }
 
 section:target {
