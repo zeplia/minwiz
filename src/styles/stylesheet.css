@@ -14,80 +14,74 @@
 }
 
 body {
-  font-size: 18px;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font: 18px -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.4;
   color: var(--tc);
   background: var(--bc);
-  max-width: 42em;
+  max-width: 36em;
   margin: 0 auto;
-  position: relative;
+  padding: 0 0.7em;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  text-align: justify;
 }
 
-header,
 main {
-  margin: 0 1em;
+  flex: 1;
 }
 
-a {
+a,
+label {
   text-decoration: none;
   color: var(--hc);
-  display: inline-block;
+  cursor: pointer;
 }
 
-a:hover {
+a:hover,
+label:hover {
   text-decoration: underline;
 }
 
-/* header */
+h2,
+br,
+main,
+header,
+ul {
+  margin-bottom: 1em;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+br {
+  content: " ";
+}
+
+/* navigation */
+input[type="radio"],
+section {
+  display: none;
+}
+
+br,
+[type="radio"]:checked ~ section {
+  display: block;
+}
+/* end navigation */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav a {
+header > label {
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+nav label {
   margin-left: 1em;
 }
-/* end header */
-
-ul,
-h2,
-p {
-  margin-bottom: 1em;
-}
-
-ul {
-  padding-left: 1.1em;
-}
-
-/* section */
-section {
-  display: none;
-  position: absolute;
-  background: var(--bc);
-  margin-right: 1em;
-  /*min-inline-size: -webkit-fill-available;*/
-  top: 0;
-  z-index: -1;
-  min-height: 38em;
-}
-
-section:target {
-  display: block;
-}
-
-section#home {
-  display: block;
-}
-
-h2 {
-  margin-top: 3em;
-}
-
-@media (hover: none), (pointer: coarse) {
-  section {
-    min-height: 50em;
-  }
-}
-/* end section */
