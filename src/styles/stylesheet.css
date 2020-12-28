@@ -70,7 +70,7 @@ section {
   /*min-inline-size: -webkit-fill-available;*/
   top: 0;
   z-index: -1;
-  min-height: 42em;
+  min-height: 38em;
 }
 
 section:target {
@@ -87,7 +87,7 @@ h2 {
 
 @media (hover: none), (pointer: coarse) {
   section {
-    min-height: 54em;
+    min-height: 50em;
   }
 }
 /* end section */
