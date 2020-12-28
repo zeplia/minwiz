@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "MinWiz - Minimal starter kit for under 2 KB sites",
   "scripts": {
+    "lint": "eslint . --ignore-path ./.gitignore",
     "build": "gulp"
   },
   "repository": {
@@ -17,6 +18,12 @@
   "homepage": "https://github.com/zeplia/minwiz#readme",
   "devDependencies": {
     "del": "^6.0.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-htmlmin": "^5.0.1",
