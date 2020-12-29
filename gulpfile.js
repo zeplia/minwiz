@@ -10,11 +10,13 @@ const html = () =>
   gulp
     .src("src/*.html")
     .pipe(inlinesource({ rootpath: path.resolve("dist") }))
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-      removeOptionalTags: true,
-      collapseBooleanAttributes: true
-    }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+        removeOptionalTags: true,
+        collapseBooleanAttributes: true,
+      })
+    )
     .pipe(gulp.dest("dist"));
 
 const css = () =>
