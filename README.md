@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d943ad50-997e-4a11-bf05-8b76ad36415f/deploy-status)](https://app.netlify.com/sites/minwiz/deploys)
+
 # MinWiz - Minimal starter kit for under 2 KB sites
 
 Use this starter kit to create a **viable, good looking, production-ready website** whose entire size does not exceed 2 KB compressed when opened in a browser. Ideally, the total size of all assets (HTML, CSS, favicon, etc.) downloaded by the browser when opening the page will be under 2 KB. You can see a live version at [MinWiz.com](https://minwiz.com).
