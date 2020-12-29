@@ -12,7 +12,8 @@ const html = () =>
     .pipe(inlinesource({ rootpath: path.resolve("dist") }))
     .pipe(htmlmin({
       collapseWhitespace: true,
-      removeOptionalTags: true
+      removeOptionalTags: true,
+      collapseBooleanAttributes: true
     }))
     .pipe(gulp.dest("dist"));
 
