@@ -21,14 +21,11 @@ body {
   max-width: 36em;
   margin: 0 auto;
   padding: 0 0.7em;
-  min-height: 100vh;
-  display: flex;
-  flex-flow: column;
   text-align: justify;
 }
 
 main {
-  flex: 1;
+  margin-bottom: 3em;
 }
 
 a,
@@ -45,7 +42,6 @@ label:hover {
 
 h2,
 br,
-main,
 header,
 ul {
   margin-bottom: 1em;
