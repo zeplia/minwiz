@@ -21,7 +21,7 @@ const css = () =>
   gulp
     .src("src/styles/*.css")
     .pipe(
-      cleanCSS({ debug: true }, (details) => {
+      cleanCSS({ debug: true, level: 2 }, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
       })
