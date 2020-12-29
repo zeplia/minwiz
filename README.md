@@ -27,5 +27,6 @@ Please note that I'm using package-lock with lockfileVersion 2. If you submit a 
 
 ## Thank you
 
-- Design insipired by [john-doe.neocities.org](https://john-doe.neocities.org/).
-- [Netlify](https://www.netlify.com/) for theirs excellent hosting service.
+- Color scheme inspired from [john-doe.neocities.org](https://john-doe.neocities.org/).
+- Navigation inspired from [Functional CSS Tabs Revisited](https://css-tricks.com/functional-css-tabs-revisited/).
+- [Netlify](https://www.netlify.com/) for their excellent hosting service.
