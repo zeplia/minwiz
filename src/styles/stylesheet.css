@@ -73,7 +73,7 @@ header {
   align-items: center;
 }
 
-header > label {
+h1 {
   font-size: 1.7em;
   font-weight: 700;
 }
