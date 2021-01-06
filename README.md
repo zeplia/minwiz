@@ -30,5 +30,6 @@ Please note that I'm using package-lock with lockfileVersion 2. If you submit a 
 ## Thank you
 
 - Color scheme inspired from [john-doe.neocities.org](https://john-doe.neocities.org/).
-- Navigation inspired from [Functional CSS Tabs Revisited](https://css-tricks.com/functional-css-tabs-revisited/).
+- <del>Navigation inspired from [Functional CSS Tabs Revisited](https://css-tricks.com/functional-css-tabs-revisited/).</dev>
 - [Netlify](https://www.netlify.com/) for their excellent hosting service.
+- Navigation suggested by /u/trust_me_im_a_turtle on reddit. Demo [here](https://codesandbox.io/s/hash-navigation-919fp?file=/index.html:226-397).

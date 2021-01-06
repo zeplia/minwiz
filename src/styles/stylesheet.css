@@ -28,15 +28,12 @@ main {
   margin-bottom: 3em;
 }
 
-a,
-label {
+a {
   text-decoration: none;
   color: var(--hc);
-  cursor: pointer;
 }
 
-a:hover,
-label:hover {
+a:hover {
   text-decoration: underline;
 }
 
@@ -53,17 +50,18 @@ ul {
 
 br {
   content: " ";
+  display: block;
 }
 
 /* navigation */
-input[type="radio"],
-section {
+section,
+section:target ~ section:last-of-type {
   display: none;
 }
 
-br,
-[type="radio"]:checked ~ section {
-  display: block;
+section:target,
+section:last-of-type {
+  display: inherit;
 }
 /* end navigation */
 
@@ -78,6 +76,6 @@ h1 {
   font-weight: 700;
 }
 
-nav label {
-  margin-left: 1em;
+nav a {
+  margin-left: 0.75em;
 }
