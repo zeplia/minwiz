@@ -4,6 +4,9 @@
 
 Use this starter kit to create a **viable, good looking, production-ready website** whose entire size does not exceed 2 KB compressed when opened in a browser. Ideally, the total size of all assets (HTML, CSS, favicon, etc.) downloaded by the browser when opening the page will be under 2 KB. You can see a live version at [MinWiz.com](https://minwiz.com).
 
+You can quickly deploy your personal copy on Netlify (this will fork the repo in your GitHub and create a new website in your Netlify account):  
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zeplia/minwiz)
+
 ## Getting started
 
 Make sure you have Node and npm installed. Any version will do.
