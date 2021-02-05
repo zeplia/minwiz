@@ -4,9 +4,6 @@
 
 Use this starter kit to create a **viable, good looking, production-ready website** whose entire size does not exceed 2 KB compressed when opened in a browser. Ideally, the total size of all assets (HTML, CSS, favicon, etc.) downloaded by the browser when opening the page will be under 2 KB. You can see a live version at [MinWiz.com](https://minwiz.com).
 
-You can quickly deploy your personal copy on Netlify (this will fork the repo in your GitHub and create a new website in your Netlify account):  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zeplia/minwiz)
-
 ## Getting started
 
 Make sure you have Node and npm installed. Any version will do.
@@ -35,4 +32,4 @@ Please note that I'm using package-lock with lockfileVersion 2. If you submit a 
 - Color scheme inspired from [john-doe.neocities.org](https://john-doe.neocities.org/).
 - <del>Navigation inspired from [Functional CSS Tabs Revisited](https://css-tricks.com/functional-css-tabs-revisited/).</dev>
 - [Netlify](https://www.netlify.com/) for their excellent hosting service.
-- Navigation suggested by /u/trust_me_im_a_turtle on reddit. Demo [here](https://codesandbox.io/s/hash-navigation-919fp?file=/index.html:226-397).
+- Navigation suggested by /u/trust_me_im_a_turtle on Reddit. Demo [here](https://codesandbox.io/s/hash-navigation-919fp?file=/index.html:226-397).
