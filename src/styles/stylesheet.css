@@ -37,6 +37,7 @@ a:hover {
   text-decoration: underline;
 }
 
+h1,
 h2,
 br,
 header,
@@ -71,7 +72,7 @@ header {
   align-items: center;
 }
 
-h1 {
+header > a {
   font-size: 1.7em;
   font-weight: 700;
 }
