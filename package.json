@@ -18,7 +18,7 @@
   "homepage": "https://github.com/zeplia/minwiz#readme",
   "devDependencies": {
     "del": "^6.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.0",
