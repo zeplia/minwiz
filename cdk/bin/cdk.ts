@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import * as cdk from "aws-cdk-lib";
 import "source-map-support/register";
-import { CdkStack } from "../lib/cdk-stack";
+import { CertificateStack } from "../lib/certificate-stack";
+import { CloudfrontStack } from "../lib/cloudfront";
 import { PipelineStack } from "../lib/pipeline-stack";
 
 if (!process.env.GITHUB_TOKEN) {
@@ -9,7 +10,19 @@ if (!process.env.GITHUB_TOKEN) {
 }
 
 const app = new cdk.App();
-new CdkStack(app, "CdkStack", {});
+
+const certStack = new CertificateStack(app, "CertificateStack", {
+  env: {
+    region: "us-east-1",
+  },
+});
+
+new CloudfrontStack(app, "CloudfrontStack", {
+  websiteCert: certStack.websiteCert,
+  env: {
+    region: "us-east-1",
+  },
+});
 
 new PipelineStack(app, "PipelineStack", {
   githubToken: process.env.GITHUB_TOKEN || "",
@@ -17,3 +30,5 @@ new PipelineStack(app, "PipelineStack", {
     region: "us-east-1",
   },
 });
+
+app.synth();

@@ -9,8 +9,9 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "diff": "cdk diff PipelineStack --profile iamadmin-general",
-    "deploy": "cdk deploy PipelineStack --profile iamadmin-general"
+    "diff": "cdk diff CertificateStack CloudfrontStack PipelineStack --profile iamadmin-general",
+    "deploy": "cdk deploy CertificateStack CloudfrontStack PipelineStack --profile iamadmin-general",
+    "destroy": "cdk destroy PipelineStack --profile iamadmin-general"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
