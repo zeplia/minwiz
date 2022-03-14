@@ -13,7 +13,7 @@
     "deploy": "cdk deploy PipelineStack --profile iamadmin-general"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.10",
+    "@types/jest": "^27.4.1",
     "@types/node": "10.17.27",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
