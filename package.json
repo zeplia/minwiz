@@ -4,7 +4,8 @@
   "description": "MinWiz - Minimal starter kit for under 2 KB sites",
   "scripts": {
     "lint": "eslint . --ignore-path ./.gitignore",
-    "build": "gulp"
+    "build": "gulp",
+    "deploy": "cd cdk && npm run deploy && cd .."
   },
   "repository": {
     "type": "git",

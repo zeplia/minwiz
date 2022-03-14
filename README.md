@@ -33,3 +33,11 @@ Please note that I'm using package-lock with lockfileVersion 2. If you submit a 
 - <del>Navigation inspired from [Functional CSS Tabs Revisited](https://css-tricks.com/functional-css-tabs-revisited/).</dev>
 - [Netlify](https://www.netlify.com/) for their excellent hosting service.
 - Navigation suggested by /u/trust_me_im_a_turtle on Reddit. Demo [here](https://codesandbox.io/s/hash-navigation-919fp?file=/index.html:226-397).
+
+## CDK deployment notes
+
+For `cdk deploy` to work we need to have a Github personal access token in the GITHUB_TOKEN variable:
+
+```
+echo export GITHUB_TOKEN=REPLACE_ME_WITH_THE_REAL_GITHUB_TOKEN >> ~/.bashrc
+```
