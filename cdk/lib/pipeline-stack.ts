@@ -1,6 +1,7 @@
 import { App, SecretValue, Stack, StackProps } from "aws-cdk-lib";
 import {
   BuildSpec,
+  ComputeType,
   LinuxBuildImage,
   PipelineProject,
 } from "aws-cdk-lib/aws-codebuild";
@@ -37,6 +38,7 @@ export class PipelineStack extends Stack {
       }),
       environment: {
         buildImage: LinuxBuildImage.STANDARD_5_0,
+        computeType: ComputeType.SMALL,
       },
     });
 
