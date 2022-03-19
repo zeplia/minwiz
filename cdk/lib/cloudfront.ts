@@ -44,7 +44,7 @@ export class CloudfrontStack extends Stack {
       value: this.websiteBucket.bucketArn,
     });
 
-    const cachePolicy = new CachePolicy(this, "examplePolicy", {
+    const cachePolicy = new CachePolicy(this, "MinWizPolicy", {
       defaultTtl: Duration.hours(24),
       minTtl: Duration.hours(24),
       maxTtl: Duration.hours(24),
@@ -52,7 +52,7 @@ export class CloudfrontStack extends Stack {
       enableAcceptEncodingBrotli: true,
     });
 
-    const distribution = new Distribution(this, "exampleDistribution", {
+    const distribution = new Distribution(this, "MinWizDistribution", {
       defaultBehavior: {
         origin: new S3Origin(this.websiteBucket),
         allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,

@@ -64,6 +64,7 @@ export class PipelineStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY,
       encryption: BucketEncryption.S3_MANAGED,
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+      autoDeleteObjects: true,
     });
 
     new Pipeline(this, "MinWiz", {

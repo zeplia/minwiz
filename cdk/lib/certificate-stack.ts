@@ -20,7 +20,7 @@ export class CertificateStack extends Stack {
       }
     );
 
-    this.websiteCert = new DnsValidatedCertificate(this, "WebsiteSSL", {
+    this.websiteCert = new DnsValidatedCertificate(this, "MinWizSSL", {
       domainName: website_domain,
       subjectAlternativeNames: [`www.${website_domain}`],
       hostedZone: this.hostedZone,
