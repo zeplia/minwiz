@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d943ad50-997e-4a11-bf05-8b76ad36415f/deploy-status)](https://app.netlify.com/sites/minwiz/deploys)
-
 # MinWiz - Minimal starter kit for under 2 KB sites
 
 Use this starter kit to create a **viable, good looking, production-ready website** whose entire size does not exceed 2 KB compressed when opened in a browser. Ideally, the total size of all assets (HTML, CSS, favicon, etc.) downloaded by the browser when opening the page will be under 2 KB. You can see a live version at [MinWiz.com](https://minwiz.com).
@@ -31,7 +29,6 @@ Please note that I'm using package-lock with lockfileVersion 2. If you submit a 
 
 - Color scheme inspired from [john-doe.neocities.org](https://john-doe.neocities.org/).
 - <del>Navigation inspired from [Functional CSS Tabs Revisited](https://css-tricks.com/functional-css-tabs-revisited/).</dev>
-- [Netlify](https://www.netlify.com/) for their excellent hosting service.
 - Navigation suggested by /u/trust_me_im_a_turtle on Reddit. Demo [here](https://codesandbox.io/s/hash-navigation-919fp?file=/index.html:226-397).
 
 ## CDK deployment notes
