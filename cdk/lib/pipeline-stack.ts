@@ -1,4 +1,10 @@
-import { App, SecretValue, Stack, StackProps } from "aws-cdk-lib";
+import {
+  App,
+  RemovalPolicy,
+  SecretValue,
+  Stack,
+  StackProps,
+} from "aws-cdk-lib";
 import {
   BuildSpec,
   ComputeType,
@@ -12,7 +18,11 @@ import {
   GitHubTrigger,
   S3DeployAction,
 } from "aws-cdk-lib/aws-codepipeline-actions";
-import { Bucket } from "aws-cdk-lib/aws-s3";
+import {
+  BlockPublicAccess,
+  Bucket,
+  BucketEncryption,
+} from "aws-cdk-lib/aws-s3";
 
 export interface PipelineStackProps extends StackProps {
   readonly githubToken: string;
@@ -23,7 +33,8 @@ export class PipelineStack extends Stack {
   constructor(app: App, id: string, props: PipelineStackProps) {
     super(app, id, props);
 
-    const siteBuild = new PipelineProject(this, "SiteBuild", {
+    const siteBuild = new PipelineProject(this, "MinWizBuild", {
+      description: "minwiz.com site build",
       buildSpec: BuildSpec.fromObject({
         version: "0.2",
         phases: {
@@ -49,8 +60,15 @@ export class PipelineStack extends Stack {
 
     const sourceOutput = new Artifact("SrcOutput");
 
-    new Pipeline(this, "Pipeline", {
+    const artifactBucket = new Bucket(this, "MinWizPipelineArtifacts", {
+      removalPolicy: RemovalPolicy.DESTROY,
+      encryption: BucketEncryption.S3_MANAGED,
+      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+    });
+
+    new Pipeline(this, "MinWiz", {
       restartExecutionOnUpdate: true,
+      artifactBucket,
       stages: [
         {
           stageName: "Source",
