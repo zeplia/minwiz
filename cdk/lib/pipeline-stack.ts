@@ -10,10 +10,13 @@ import {
   CodeBuildAction,
   GitHubSourceAction,
   GitHubTrigger,
+  S3DeployAction,
 } from "aws-cdk-lib/aws-codepipeline-actions";
+import { Bucket } from "aws-cdk-lib/aws-s3";
 
 export interface PipelineStackProps extends StackProps {
   readonly githubToken: string;
+  readonly websiteBucket: Bucket;
 }
 
 export class PipelineStack extends Stack {
@@ -70,6 +73,16 @@ export class PipelineStack extends Stack {
               project: siteBuild,
               input: sourceOutput,
               outputs: [siteBuildOutput],
+            }),
+          ],
+        },
+        {
+          stageName: "Deploy",
+          actions: [
+            new S3DeployAction({
+              actionName: "DeployStaticSite",
+              input: siteBuildOutput,
+              bucket: props.websiteBucket,
             }),
           ],
         },

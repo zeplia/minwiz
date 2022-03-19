@@ -16,26 +16,32 @@ import {
   ViewerProtocolPolicy,
 } from "aws-cdk-lib/aws-cloudfront";
 import { S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
+import { ARecord, IHostedZone, RecordTarget } from "aws-cdk-lib/aws-route53";
+import { HttpsRedirect } from "aws-cdk-lib/aws-route53-patterns";
+import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
 import { Bucket } from "aws-cdk-lib/aws-s3";
 import { Construct } from "constructs";
 import { website_domain } from "./variables";
 
 export interface CloudfrontStackProps extends StackProps {
   readonly websiteCert: DnsValidatedCertificate;
+  readonly hostedZone: IHostedZone;
 }
 
 export class CloudfrontStack extends Stack {
+  public readonly websiteBucket: Bucket;
+
   constructor(scope: Construct, id: string, props: CloudfrontStackProps) {
     super(scope, id, props);
 
-    const bucket = new Bucket(this, "websiteBucket", {
+    this.websiteBucket = new Bucket(this, "websiteBucket", {
       removalPolicy: RemovalPolicy.DESTROY,
       bucketName: website_domain,
       autoDeleteObjects: true,
     });
 
     new CfnOutput(this, "websiteBucketArn", {
-      value: bucket.bucketArn,
+      value: this.websiteBucket.bucketArn,
     });
 
     const cachePolicy = new CachePolicy(this, "examplePolicy", {
@@ -48,13 +54,13 @@ export class CloudfrontStack extends Stack {
 
     const distribution = new Distribution(this, "exampleDistribution", {
       defaultBehavior: {
-        origin: new S3Origin(bucket),
+        origin: new S3Origin(this.websiteBucket),
         allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
         cachePolicy,
         compress: true,
         viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
-      domainNames: [website_domain],
+      domainNames: [website_domain /*, `www.${website_domain}`*/],
       certificate: props.websiteCert,
       minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2019,
       defaultRootObject: "index.html",
@@ -62,6 +68,18 @@ export class CloudfrontStack extends Stack {
       enabled: true,
       httpVersion: HttpVersion.HTTP2,
       priceClass: PriceClass.PRICE_CLASS_ALL,
+    });
+
+    new ARecord(this, "aliasForCloudfront", {
+      target: RecordTarget.fromAlias(new CloudFrontTarget(distribution)),
+      zone: props.hostedZone,
+      recordName: website_domain,
+    });
+
+    new HttpsRedirect(this, "wwwToNonWww", {
+      recordNames: [`www.${website_domain}`],
+      targetDomain: website_domain,
+      zone: props.hostedZone,
     });
   }
 }

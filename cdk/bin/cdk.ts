@@ -17,8 +17,9 @@ const certStack = new CertificateStack(app, "CertificateStack", {
   },
 });
 
-new CloudfrontStack(app, "CloudfrontStack", {
+const cloudfrontStack = new CloudfrontStack(app, "CloudfrontStack", {
   websiteCert: certStack.websiteCert,
+  hostedZone: certStack.hostedZone,
   env: {
     region: "us-east-1",
   },
@@ -26,6 +27,7 @@ new CloudfrontStack(app, "CloudfrontStack", {
 
 new PipelineStack(app, "PipelineStack", {
   githubToken: process.env.GITHUB_TOKEN || "",
+  websiteBucket: cloudfrontStack.websiteBucket,
   env: {
     region: "us-east-1",
   },
