@@ -4,6 +4,7 @@
   "bin": {
     "cdk": "bin/cdk.js"
   },
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
